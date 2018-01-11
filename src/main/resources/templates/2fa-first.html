@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Google Login - 2단계 인증</title>
+</head>
+<body>
+<div>
+    <a href="/">홈으로</a>
+    <span th:if="${session.loginUser != null}" th:text="${session.loginUser.email}"></span>
+    <h2>처음이시네요!</h2>
+    <h3>Google Authentication 어플에서 바코드나 key 를 입력해주세요.</h3>
+
+    <div>key : <span th:if="${key != null}" th:text="${key}"></span></div>
+    <div>QR code :
+        <div>
+            <img th:if="${qrCodeUrl != null}" th:src="${qrCodeUrl}" />
+        </div>
+    </div>
+
+    <a href="/2fa"><h4>이어서 로그인 진행하기</h4></a>
+
+</div>
+<script src="bundle.js"></script>
+</body>
+</html>

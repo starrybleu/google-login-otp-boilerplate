@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Google Login + OTP</title>
+</head>
+<body>
+<a href="/login">Login</a>
+<span th:if="${session.loginUser != null}" th:text="${session.loginUser.email}"></span>
+
+<script src="bundle.js"></script>
+</body>
+</html>

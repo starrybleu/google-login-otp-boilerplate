@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Google OTP - 2단계 인증</title>
+</head>
+<body>
+<a href="/login">로그인</a>
+<div>
+    <h3>Google Authentication 어플을 이용하여 로그인해주세요.</h3>
+
+    <form method="post" action="/2fa-authenticate">
+        OTP 코드(6자리 숫자) : <input type="text" name="otpCode" />
+        <input th:type="hidden" type="text" name="encodedKey" th:value="${session.loginUser.googleSecret}" required="required" />
+        <button type="submit">로그인</button>
+    </form>
+
+    <span>처음이신가요?</span>
+    <a href="/2fa-first">OTP 연동하러 가기</a>
+
+</div>
+
+<script src="bundle.js"></script>
+</body>
+</html>
