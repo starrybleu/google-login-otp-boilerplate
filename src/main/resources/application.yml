@@ -1,0 +1,16 @@
+logging:
+  level:
+    org.hibernate.type: trace
+
+server:
+    session.timeout: 86400 # one day
+    tomcat:
+        accesslog:
+            directory: /opt/google-login-otp-boilerplate/logs/access
+            pattern: '%h %l %u %t "%r" %s %b %{X-Forwarded-For}i'
+        background-processor-delay: 14
+    compression.enabled: true
+
+spring:
+  thymeleaf:
+    cache: false

@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    username:
+    password:
+    url:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+  thymeleaf:
+      cache: false
+  devtools:
+    livereload:
+      enabled: true
